@@ -1,14 +1,17 @@
 {
   "name": "public",
   "version": "0.0.1",
-  "description": "基于中断一款消费软件",
+  "description": "基于终端一款消费软件",
   "main": "index.jsx",
   "dependencies": {
     "react": "^15.6.1",
+    "react-addons-perf": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-tools": "^0.13.3",
+    "react-swipe":"^5.0.8",
     "react-transform": "^0.0.3",
     "react-transform-hmr": "^1.0.4",
     "redux": "^3.7.2",
