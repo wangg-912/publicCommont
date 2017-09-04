@@ -1,8 +1,8 @@
-import { createStore} from "redux";
-import userinfo from './userinfo.js';
-import store from './store.js';
+import { combineReducers } from 'redux'
+import userinfo from './userinfo'
+import store from './store'
 
 export default combineReducers({
-    userinfo,
-    store
+  userinfo,
+  store
 })

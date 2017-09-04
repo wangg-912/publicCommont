@@ -1,40 +1,43 @@
-import React from "react";
-import "./style.less";
+import React from 'react'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-class SearchInput extends Component{
-    constructor(props,context){
-        super(props,context)
+import './style.less'
+
+class SearchInput extends React.Component {
+    constructor(props, context) {
+        super(props, context)
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            value:""
+            value: ''
         }
     }
-    render(){
+    render() {
         return (
-            <input 
-            className="search-input" 
-            type = "text"
-            placeholder = "请输入关键字"
-            onChange = {this.ChangeHandle.bind(this)}
-            onKeyUp = {this.KeyUpHandle.bing(this)}
-            value = {this.state.value} />
+            <input
+                className="search-input"
+                type="text"
+                placeholder="请输入关键字"
+                onChange={this.ChangeHandle.bind(this)}
+                onKeyUp={this.KeyUpHandle.bind(this)}
+                value={this.state.value}/>
         )
     }
     componentDidMount(){
-        this.setState({
-            value:this.props.value || ""
-        })
+      this.setState({
+        value:this.props.value || ''
+      })
     }
     ChangeHandle(e){
-        this.setState({
-            value:e.target.value
-        })
+      this.setState({
+        value:e.target.value
+      })
     }
     KeyUpHandle(e){
-        if(e.keyCode !== 13){
-            return
-        }
-        this.props.enterHandle(e.target.value);
+      if(e.keyCode !== 13){
+        return
+      }
+      this.props.enterHandle(e.target.value)
     }
-
 }
+
 export default SearchInput

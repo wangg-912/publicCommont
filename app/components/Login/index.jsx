@@ -1,38 +1,38 @@
-import React,{Component} from "react";
-import PureRenserMixin from "react-addons-pure-render-mixin";
-import "./style.less";
+import React from 'react'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
+import './style.less'
 
-class Login extends Component{
-    constructor(props,content){
-        super(props,context)
-        this.shouldComponentUpdate = PureRenserMixin.shouldComponentUpdate.bind(this);
+class Login extends React.Component {
+    constructor(props, context) {
+        super(props, context)
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            username:""
+          username: ''
         }
     }
-    render(){
+    render() {
         return (
-            <div id="login-container">
-                <div className="input-container phone-container">
-                    <i className="icon-tablet"></i>
-                    <input
-                        type="text"
-                        placeholder="输入手机号"
-                        onChange={this.changeHandle.bind(this)}
-                        value={this.state.username}
-                    />
-                </div>
-                <div className="input-container password-container">
-                    <i className="icon-key"></i>
-                    <button>发送验证码</button>
-                    <input type="text" placeholder="输入验证码"/>
-                </div>
-                <button className="btn-login" onClick={this.clickHandle.bind(this)}>登录</button>
-            </div>
-          )
+          <div id="login-container">
+              <div className="input-container phone-container">
+                  <i className="icon-tablet"></i>
+                  <input
+                      type="text"
+                      placeholder="输入手机号"
+                      onChange={this.changeHandle.bind(this)}
+                      value={this.state.username}
+                  />
+              </div>
+              <div className="input-container password-container">
+                  <i className="icon-key"></i>
+                  <button>发送验证码</button>
+                  <input type="text" placeholder="输入验证码"/>
+              </div>
+              <button className="btn-login" onClick={this.clickHandle.bind(this)}>登录</button>
+          </div>
+        )
     }
-    changeHandle(e){
-        this.state({
+    changeHandle(e) {
+        this.setState({
             username: e.target.value
         })
     }
@@ -43,4 +43,4 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default Login
